@@ -1,14 +1,14 @@
 pipeline{
         agent any
         stages{
-            stage('Make Directory'){
+            stage('Clone repo'){
                 steps{
-                    sh "mkdir ~/jenkins-tutorial-test"
+                    sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                 }
             }
-            stage('Make Files'){
+            stage('Deploy app'){
                 steps{
-                    sh "touch ~/jenkins-tutorial-test/file1 ~/jenkins-tutorial-test/file2"
+                    sh "docker-compose pull && sudo -E DB_PASSWORD=${DB_PASSWORD} docker-compose up -d."
                 }
             }
         }
