@@ -9,6 +9,7 @@ pipeline{
             stage('Deploy app'){
                 steps{
                     sh "cd chaperootodo_client"
+                    sh "ls -la"
                     sh "DB_PASSWORD=PASSWORD docker-compose up -d"
                     
                         
