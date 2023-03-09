@@ -8,7 +8,7 @@ pipeline{
             }
             stage('Deploy app'){
                 steps{
-                    sh "sudo docker-compose pull && sudo -E DB_PASSWORD=PASSWORD docker-compose up -d."
+                    sh "docker-compose pull && DB_PASSWORD=PASSWORD docker-compose up -d."
                         
                 }
             }
