@@ -10,7 +10,6 @@ pipeline{
                 steps{
                     sh '''
                     cd chaperootodo_client
-                    ls -la
                     DB_PASSWORD=PASSWORD docker-compose up -d
                     '''
                         
